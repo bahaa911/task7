@@ -1,0 +1,13 @@
+node {
+  
+    def dockerfilePath = 'C:\Windows\System32\cmd.exe'
+
+    stage('Build Docker Image') {
+        
+        sh "docker build -t my-docker-image:latest -f ${C:\Windows\System32\cmd.exe} ."
+    }
+stage('Run Docker Container') {
+      
+        sh 'docker run my-docker-image:latest'
+    }
+}
